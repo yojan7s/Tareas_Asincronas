@@ -22,14 +22,23 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.id_tv_data);
     }
 
+    //metodo para validad el estado de la red
     public Boolean isOnLine(){
         //obtener el servicio de la conectividad en android
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         //obtener la informancion del estado de la red
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        if(networkInfo != null){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
+    //evento para el boton principal
     public  void  loadData(){
 
     }
